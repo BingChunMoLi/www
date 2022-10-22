@@ -57,7 +57,7 @@ $(document).ready(function () {
 			images = result.data.images;
 			for (let i = 0; i < images.length; i++) {
 				const item = images[i];
-				imgUrls.push(item.urlBase + "_UHD.jpg");
+				imgUrls.push(item.urlbase + "_UHD.jpg");
 			}
 			var imgUrl = imgUrls[index];
 			var url = "https://www.bing.com" + imgUrl;
