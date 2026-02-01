@@ -30,10 +30,10 @@ var iUp = (function () {
 $(document).ready(function () {
 
 	// 获取一言数据
-	fetch('https://api.bingchunmoli.com/yiyan/random').then(function (res) {
+	fetch('https://v1.hitokoto.cn').then(function (res) {
 		return res.json();
 	}).then(function (res) {
-		$('#description').html(res.data.hitokoto + "<br/> -「<strong>" + res.data.from + "</strong>」")
+		$('#description').html(res.hitokoto + "<br/> -「<strong>" + res.from + "</strong>」")
 	}).catch(function (err) {
 		console.error(err);
 	})
