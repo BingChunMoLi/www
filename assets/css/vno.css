@@ -7936,6 +7936,11 @@ hr {
   display: none !important;
 }
 
+#panel {
+  background: url("/img/back.webp") center center no-repeat #666;
+  background-size: cover;
+}
+
 .panel {
   display: table;
   width: 100%;

@@ -43,34 +43,34 @@ $(document).ready(function () {
 	 * 获取Bing壁纸
 	 *
 	 */
-	var url = 'https://api.bingchunmoli.com/bing/cn';
-	var imgUrls = JSON.parse(sessionStorage.getItem("imgUrls"));
-	if (imgUrls == "undefined_UHD.jpg") {
-		imgUrls = null;
-	}
-	var index = sessionStorage.getItem("index");
-	var $panel = $('#panel');
-	if (imgUrls == null) {
-		imgUrls = new Array();
-		index = 0;
-		$.get(url, function (result) {
-			images = result.data.images;
-			for (let i = 0; i < images.length; i++) {
-				const item = images[i];
-				imgUrls.push(item.urlbase + "_UHD.jpg");
-			}
-			var imgUrl = imgUrls[index];
-			var url = "https://www.bing.com" + imgUrl;
-			$panel.css("background", "url('" + url + "') center center no-repeat #666");
-			$panel.css("background-size", "cover");
-			sessionStorage.setItem("imgUrls", JSON.stringify(imgUrls));
-			sessionStorage.setItem("index", index);
-		});
-	} else {
-		var url = "https://www.bing.com" + imgUrls[index];
-		$panel.css("background", "url('" + url + "') center center no-repeat #666");
-		$panel.css("background-size", "cover");
-	}
+	// var url = 'https://api.bingchunmoli.com/bing/cn';
+	// var imgUrls = JSON.parse(sessionStorage.getItem("imgUrls"));
+	// if (imgUrls == "undefined_UHD.jpg") {
+	// 	imgUrls = null;
+	// }
+	// var index = sessionStorage.getItem("index");
+	// var $panel = $('#panel');
+	// if (imgUrls == null) {
+	// 	imgUrls = new Array();
+	// 	index = 0;
+	// 	$.get(url, function (result) {
+	// 		images = result.data.images;
+	// 		for (let i = 0; i < images.length; i++) {
+	// 			const item = images[i];
+	// 			imgUrls.push(item.urlbase + "_UHD.jpg");
+	// 		}
+	// 		var imgUrl = imgUrls[index];
+	// 		var url = "https://www.bing.com" + imgUrl;
+	// 		$panel.css("background", "url('" + url + "') center center no-repeat #666");
+	// 		$panel.css("background-size", "cover");
+	// 		sessionStorage.setItem("imgUrls", JSON.stringify(imgUrls));
+	// 		sessionStorage.setItem("index", index);
+	// 	});
+	// } else {
+	// 	var url = "https://www.bing.com" + imgUrls[index];
+	// 	$panel.css("background", "url('" + url + "') center center no-repeat #666");
+	// 	$panel.css("background-size", "cover");
+	// }
 
 	$(".iUp").each(function (i, e) {
 		iUp.up(e);
